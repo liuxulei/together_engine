@@ -1,14 +1,21 @@
-#include <hash_map>
-using namespace __gnu_cxx;
-
-#include<string>
 #include <iostream>
+#include <unordered_map>
+#include <string>
 using namespace std;
 
-int main(){
-	hash_map<string, string> mymap;
-	mymap.insert(pair<string,string>("hcq", "20"));
-	mymap["sgx"]="24";
-	mymap["sb"]="23";
-	return 1;
+int main(int argc, char **argv){
+	unordered_map<int, std::string> map;
+	for(int i = 1; i <= 10000000; i++){
+		map.insert(make_pair(i, "ssdd"));
+	}
+	unordered_map<int, std::string>::iterator it;
+
+	it = map.find(2222);
+	it->second = "alvinxlliu";
+	cout << it->second << endl;
+	
+	/*if((it = map.find(100000)) != map.end()){
+		cout << it->second << endl;
+	} */
+	return 0;
 }
