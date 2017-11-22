@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <iostream>
 #include <unordered_map>
 #include <string>
@@ -13,7 +14,18 @@ int main(int argc, char **argv){
 	it = map.find(2222);
 	it->second = "alvinxlliu";
 	cout << it->second << endl;
-	
+
+	int j = 1;
+	while(true){
+		it = map.find(j);
+		cout << it->second << endl;
+		//sleep(1);
+		cout << j << endl;
+		j++;
+		cout << "" << endl;
+		sleep(1);
+	}
+
 	/*if((it = map.find(100000)) != map.end()){
 		cout << it->second << endl;
 	} */
